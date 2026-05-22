@@ -1,0 +1,23 @@
+{
+  "roles": [
+    { "name": "Admin", "color": "#FF0000", "hoist": true },
+    { "name": "Moderator", "color": "#00FF00", "hoist": true },
+    { "name": "Member", "color": "#0000FF", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Information Hub",
+      "channels": [
+        { "name": "welcome", "type": "text", "topic": "Welcome to our community!" },
+        { "name": "announcements", "type": "text" }
+      ]
+    },
+    {
+      "name": "General Lounges",
+      "channels": [
+        { "name": "general-chat", "type": "text", "topic": "Main discussion zone" },
+        { "name": "Voice Chat 1", "type": "voice" }
+      ]
+    }
+  ]
+}
