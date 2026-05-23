@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Streamer", "color": "#6C5CE7", "hoist": true },
+    { "name": "Mod Squad", "color": "#00CEC9", "hoist": true },
+    { "name": "Subscriber", "color": "#FDCB6E", "hoist": true },
+    { "name": "Viewer", "color": "#636E72", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Live Updates",
+      "channels": [
+        { "name": "go-live-alerts", "type": "text", "topic": "Live notifications and stream changes." },
+        { "name": "stream-schedule", "type": "text", "topic": "Planned streams and special events." },
+        { "name": "stream-rules", "type": "text", "topic": "Community expectations during streams." }
+      ]
+    },
+    {
+      "name": "Chat Arena",
+      "channels": [
+        { "name": "stream-chat", "type": "text", "topic": "Continue the stream conversation here." },
+        { "name": "games-and-recs", "type": "text", "topic": "Suggest games and discuss content ideas." },
+        { "name": "memes", "type": "text", "topic": "Community humor and inside jokes." },
+        { "name": "hangout", "type": "voice" }
+      ]
+    }
+  ]
+}

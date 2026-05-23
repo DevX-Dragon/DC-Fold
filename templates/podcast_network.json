@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Host", "color": "#D35400", "hoist": true },
+    { "name": "Producer", "color": "#2980B9", "hoist": true },
+    { "name": "Editor", "color": "#8E44AD", "hoist": true },
+    { "name": "Listener", "color": "#7F8C8D", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Show Notes",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Episode releases and network updates." },
+        { "name": "publishing-calendar", "type": "text", "topic": "Track episodes, guests, and deadlines." },
+        { "name": "pitch-ideas", "type": "text", "topic": "Episode themes and concept brainstorming." }
+      ]
+    },
+    {
+      "name": "Production",
+      "channels": [
+        { "name": "recording-prep", "type": "text", "topic": "Run sheets, outlines, and talking points." },
+        { "name": "editing-feedback", "type": "text", "topic": "Review cuts, timing, and polish." },
+        { "name": "audience-discussion", "type": "text", "topic": "Listener questions and community feedback." },
+        { "name": "recording-room", "type": "voice" }
+      ]
+    }
+  ]
+}

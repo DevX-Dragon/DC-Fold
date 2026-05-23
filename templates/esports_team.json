@@ -1,0 +1,29 @@
+{
+  "roles": [
+    { "name": "Manager", "color": "#C0392B", "hoist": true },
+    { "name": "Coach", "color": "#F39C12", "hoist": true },
+    { "name": "Starter", "color": "#2980B9", "hoist": true },
+    { "name": "Substitute", "color": "#27AE60", "hoist": false },
+    { "name": "Analyst", "color": "#8E44AD", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Team Office",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Team updates and important notices." },
+        { "name": "schedule", "type": "text", "topic": "Scrims, matches, and practice times." },
+        { "name": "opponent-notes", "type": "text", "topic": "Scouting reports and research." }
+      ]
+    },
+    {
+      "name": "Practice Floor",
+      "channels": [
+        { "name": "strategy", "type": "text", "topic": "Discuss tactics, comps, and game plans." },
+        { "name": "vod-review", "type": "text", "topic": "Analyze footage and improve decision-making." },
+        { "name": "team-chat", "type": "text", "topic": "Quick communication for day-to-day activity." },
+        { "name": "scrim-room", "type": "voice" },
+        { "name": "review-room", "type": "voice" }
+      ]
+    }
+  ]
+}

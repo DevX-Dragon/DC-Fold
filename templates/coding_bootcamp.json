@@ -1,0 +1,28 @@
+{
+  "roles": [
+    { "name": "Instructor", "color": "#E67E22", "hoist": true },
+    { "name": "Mentor", "color": "#3498DB", "hoist": true },
+    { "name": "Student", "color": "#2ECC71", "hoist": false },
+    { "name": "Alumni", "color": "#9B59B6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Bootcamp Info",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Official bootcamp updates and milestones." },
+        { "name": "curriculum", "type": "text", "topic": "Modules, learning path, and reading order." },
+        { "name": "assignments", "type": "text", "topic": "Projects, deadlines, and submission notes." }
+      ]
+    },
+    {
+      "name": "Learning",
+      "channels": [
+        { "name": "general-help", "type": "text", "topic": "Ask coding questions and unblock fast." },
+        { "name": "project-showcase", "type": "text", "topic": "Share demos and progress screenshots." },
+        { "name": "code-review", "type": "text", "topic": "Feedback on solutions and structure." },
+        { "name": "mentor-office-hours", "type": "voice" },
+        { "name": "pair-programming", "type": "voice" }
+      ]
+    }
+  ]
+}

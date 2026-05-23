@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Creator", "color": "#E84393", "hoist": true },
+    { "name": "Moderator", "color": "#0984E3", "hoist": true },
+    { "name": "VIP", "color": "#FDCB6E", "hoist": true },
+    { "name": "Fan", "color": "#00B894", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Spotlight",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "New content drops and official updates." },
+        { "name": "schedule", "type": "text", "topic": "Streams, uploads, and events." },
+        { "name": "faq", "type": "text", "topic": "Frequently asked questions for fans." }
+      ]
+    },
+    {
+      "name": "Fan Space",
+      "channels": [
+        { "name": "general-chat", "type": "text", "topic": "Hang out with the community." },
+        { "name": "fan-art", "type": "text", "topic": "Share art, edits, and creative tributes." },
+        { "name": "clips-and-reactions", "type": "text", "topic": "Post memorable moments and reactions." },
+        { "name": "community-stage", "type": "voice" }
+      ]
+    }
+  ]
+}

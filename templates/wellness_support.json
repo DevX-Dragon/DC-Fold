@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Facilitator", "color": "#16A085", "hoist": true },
+    { "name": "Moderator", "color": "#2980B9", "hoist": true },
+    { "name": "Member", "color": "#27AE60", "hoist": false },
+    { "name": "Guest", "color": "#95A5A6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Grounding Space",
+      "channels": [
+        { "name": "welcome", "type": "text", "topic": "Gentle introductions and community guidance." },
+        { "name": "guidelines", "type": "text", "topic": "Boundaries, care expectations, and resources." },
+        { "name": "announcements", "type": "text", "topic": "Group updates and scheduled sessions." }
+      ]
+    },
+    {
+      "name": "Community Care",
+      "channels": [
+        { "name": "daily-check-in", "type": "text", "topic": "Share how you are doing today." },
+        { "name": "coping-tools", "type": "text", "topic": "Helpful techniques and supportive resources." },
+        { "name": "peer-support", "type": "text", "topic": "Encouragement and respectful conversation." },
+        { "name": "support-circle", "type": "voice" }
+      ]
+    }
+  ]
+}

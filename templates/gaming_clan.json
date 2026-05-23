@@ -1,0 +1,38 @@
+{
+  "roles": [
+    { "name": "Clan Leader", "color": "#C0392B", "hoist": true },
+    { "name": "Officer", "color": "#8E44AD", "hoist": true },
+    { "name": "Raid Lead", "color": "#F39C12", "hoist": true },
+    { "name": "Member", "color": "#27AE60", "hoist": false },
+    { "name": "Recruit", "color": "#7F8C8D", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Clan HQ",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Clan updates, notices, and schedules." },
+        { "name": "rules", "type": "text", "topic": "Code of conduct and team expectations." },
+        { "name": "roster", "type": "text", "topic": "Who is active and which role they play." }
+      ]
+    },
+    {
+      "name": "Squad Chat",
+      "channels": [
+        { "name": "general-chat", "type": "text", "topic": "Daily banter and coordination." },
+        { "name": "looking-for-group", "type": "text", "topic": "Find teammates for games or matches." },
+        { "name": "clips-and-highlights", "type": "text", "topic": "Share wins, plays, and funny moments." },
+        { "name": "party-1", "type": "voice" },
+        { "name": "party-2", "type": "voice" },
+        { "name": "party-3", "type": "voice" }
+      ]
+    },
+    {
+      "name": "Competitive",
+      "channels": [
+        { "name": "scrim-plans", "type": "text", "topic": "Practice planning and team strategy." },
+        { "name": "match-reports", "type": "text", "topic": "Results, feedback, and recap notes." },
+        { "name": "war-room", "type": "voice" }
+      ]
+    }
+  ]
+}
