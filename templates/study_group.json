@@ -1,0 +1,28 @@
+{
+  "roles": [
+    { "name": "Organizer", "color": "#D35400", "hoist": true },
+    { "name": "Tutor", "color": "#2980B9", "hoist": true },
+    { "name": "Student", "color": "#16A085", "hoist": false },
+    { "name": "Guest", "color": "#95A5A6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Orientation",
+      "channels": [
+        { "name": "welcome", "type": "text", "topic": "Start here and learn how the study group works." },
+        { "name": "schedule", "type": "text", "topic": "Timetables, deadlines, and study session plans." },
+        { "name": "resources", "type": "text", "topic": "Useful notes, links, and recommended material." }
+      ]
+    },
+    {
+      "name": "Study Rooms",
+      "channels": [
+        { "name": "general-study", "type": "text", "topic": "Questions, accountability, and discussion." },
+        { "name": "homework-help", "type": "text", "topic": "Ask for help with assignments and exercises." },
+        { "name": "exam-prep", "type": "text", "topic": "Prep strategies and revision sessions." },
+        { "name": "quiet-room", "type": "voice" },
+        { "name": "group-study", "type": "voice" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "roles": [
+    { "name": "Game Master", "color": "#8E44AD", "hoist": true },
+    { "name": "Moderator", "color": "#2980B9", "hoist": true },
+    { "name": "Player", "color": "#27AE60", "hoist": false },
+    { "name": "Spectator", "color": "#7F8C8D", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "World Guide",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Campaign news and event notices." },
+        { "name": "lore", "type": "text", "topic": "Worldbuilding details, history, and factions." },
+        { "name": "character-creation", "type": "text", "topic": "Build and refine player characters." }
+      ]
+    },
+    {
+      "name": "Roleplay",
+      "channels": [
+        { "name": "in-character", "type": "text", "topic": "Main story and in-character scenes." },
+        { "name": "out-of-character", "type": "text", "topic": "Planning, clarifications, and casual chat." },
+        { "name": "quest-board", "type": "text", "topic": "Hooks, missions, and event prompts." },
+        { "name": "table-1", "type": "voice" },
+        { "name": "table-2", "type": "voice" }
+      ]
+    }
+  ]
+}

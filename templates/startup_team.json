@@ -1,0 +1,29 @@
+{
+  "roles": [
+    { "name": "Founder", "color": "#E74C3C", "hoist": true },
+    { "name": "Lead", "color": "#F39C12", "hoist": true },
+    { "name": "Team", "color": "#3498DB", "hoist": false },
+    { "name": "Advisor", "color": "#9B59B6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Company Pulse",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Company-wide updates and key decisions." },
+        { "name": "goals-and-metrics", "type": "text", "topic": "KPIs, milestones, and weekly targets." },
+        { "name": "team-calendar", "type": "text", "topic": "Launches, demos, and meeting reminders." }
+      ]
+    },
+    {
+      "name": "Execution",
+      "channels": [
+        { "name": "general-ops", "type": "text", "topic": "Daily coordination across the team." },
+        { "name": "product", "type": "text", "topic": "Feature planning and product feedback." },
+        { "name": "engineering", "type": "text", "topic": "Build, bugs, and implementation details." },
+        { "name": "marketing", "type": "text", "topic": "Growth, campaigns, and positioning." },
+        { "name": "daily-standup", "type": "voice" },
+        { "name": "strategy-room", "type": "voice" }
+      ]
+    }
+  ]
+}
