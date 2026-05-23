@@ -1,0 +1,28 @@
+{
+  "roles": [
+    { "name": "Teacher", "color": "#D35400", "hoist": true },
+    { "name": "Assistant", "color": "#2980B9", "hoist": true },
+    { "name": "Student", "color": "#27AE60", "hoist": false },
+    { "name": "Parent", "color": "#8E44AD", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Class Info",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Class updates, reminders, and notices." },
+        { "name": "syllabus", "type": "text", "topic": "Course outline and expectations." },
+        { "name": "assignments", "type": "text", "topic": "Homework, deadlines, and project notes." }
+      ]
+    },
+    {
+      "name": "Classroom",
+      "channels": [
+        { "name": "class-discussion", "type": "text", "topic": "Ask questions and discuss lessons." },
+        { "name": "group-projects", "type": "text", "topic": "Coordinate team assignments." },
+        { "name": "study-help", "type": "text", "topic": "Support each other with coursework." },
+        { "name": "lecture-room", "type": "voice" },
+        { "name": "project-room", "type": "voice" }
+      ]
+    }
+  ]
+}

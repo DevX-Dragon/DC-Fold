@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Curator", "color": "#D35400", "hoist": true },
+    { "name": "Featured Artist", "color": "#8E44AD", "hoist": true },
+    { "name": "Artist", "color": "#16A085", "hoist": false },
+    { "name": "Visitor", "color": "#95A5A6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Gallery Entrance",
+      "channels": [
+        { "name": "welcome", "type": "text", "topic": "Introduce yourself and your art style." },
+        { "name": "announcements", "type": "text", "topic": "Exhibits, events, and important updates." },
+        { "name": "submission-guidelines", "type": "text", "topic": "How to share work and participate." }
+      ]
+    },
+    {
+      "name": "Studios",
+      "channels": [
+        { "name": "showcase", "type": "text", "topic": "Post finished work and portfolio pieces." },
+        { "name": "workshop", "type": "text", "topic": "Discuss techniques, tools, and process." },
+        { "name": "critique-corner", "type": "text", "topic": "Request and give respectful feedback." },
+        { "name": "open-studio", "type": "voice" }
+      ]
+    }
+  ]
+}

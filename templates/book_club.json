@@ -1,0 +1,27 @@
+{
+  "roles": [
+    { "name": "Host", "color": "#8E44AD", "hoist": true },
+    { "name": "Moderator", "color": "#2980B9", "hoist": true },
+    { "name": "Reader", "color": "#27AE60", "hoist": false },
+    { "name": "Guest", "color": "#95A5A6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Club Desk",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Current reads, voting, and meeting notices." },
+        { "name": "reading-list", "type": "text", "topic": "Upcoming books and recommendations." },
+        { "name": "schedule", "type": "text", "topic": "Meeting dates and chapter deadlines." }
+      ]
+    },
+    {
+      "name": "Discussion Rooms",
+      "channels": [
+        { "name": "current-book", "type": "text", "topic": "Discuss the active book selection." },
+        { "name": "spoiler-room", "type": "text", "topic": "Full spoilers and deeper analysis." },
+        { "name": "book-recommendations", "type": "text", "topic": "Share favorites and find your next read." },
+        { "name": "book-talk", "type": "voice" }
+      ]
+    }
+  ]
+}

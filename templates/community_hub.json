@@ -1,0 +1,34 @@
+{
+  "roles": [
+    { "name": "Owner", "color": "#E74C3C", "hoist": true },
+    { "name": "Moderator", "color": "#3498DB", "hoist": true },
+    { "name": "Member", "color": "#2ECC71", "hoist": false },
+    { "name": "Newcomer", "color": "#95A5A6", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Start Here",
+      "channels": [
+        { "name": "welcome", "type": "text", "topic": "Introduce yourself and get settled in." },
+        { "name": "rules-and-info", "type": "text", "topic": "Community guidelines and important information." },
+        { "name": "announcements", "type": "text", "topic": "Official news and updates." }
+      ]
+    },
+    {
+      "name": "Community",
+      "channels": [
+        { "name": "general", "type": "text", "topic": "Main server conversation." },
+        { "name": "introductions", "type": "text", "topic": "Say hello and tell us about yourself." },
+        { "name": "media-share", "type": "text", "topic": "Share screenshots, clips, and photos." },
+        { "name": "lounge", "type": "voice" }
+      ]
+    },
+    {
+      "name": "Support Team",
+      "channels": [
+        { "name": "mod-chat", "type": "text", "topic": "Private moderator coordination." },
+        { "name": "mod-voice", "type": "voice" }
+      ]
+    }
+  ]
+}
