@@ -1,0 +1,28 @@
+{
+  "roles": [
+    { "name": "Producer", "color": "#8E44AD", "hoist": true },
+    { "name": "Artist", "color": "#E67E22", "hoist": true },
+    { "name": "Collaborator", "color": "#3498DB", "hoist": false },
+    { "name": "Listener", "color": "#7F8C8D", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Studio Board",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Releases, deadlines, and community updates." },
+        { "name": "release-calendar", "type": "text", "topic": "Track launch dates and planned drops." },
+        { "name": "resources", "type": "text", "topic": "Plugins, samples, and reference material." }
+      ]
+    },
+    {
+      "name": "Creation Space",
+      "channels": [
+        { "name": "work-in-progress", "type": "text", "topic": "Share unfinished tracks and get feedback." },
+        { "name": "feedback", "type": "text", "topic": "Constructive critique and mix notes." },
+        { "name": "collab-board", "type": "text", "topic": "Find vocalists, producers, and features." },
+        { "name": "studio-a", "type": "voice" },
+        { "name": "listening-room", "type": "voice" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "roles": [
+    { "name": "Organizer", "color": "#E74C3C", "hoist": true },
+    { "name": "Mentor", "color": "#3498DB", "hoist": true },
+    { "name": "Judge", "color": "#9B59B6", "hoist": true },
+    { "name": "Hacker", "color": "#2ECC71", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Event Desk",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Official hackathon updates and deadlines." },
+        { "name": "rules-and-faq", "type": "text", "topic": "Submission rules, judging, and FAQs." },
+        { "name": "resources", "type": "text", "topic": "APIs, starter packs, and helpful links." }
+      ]
+    },
+    {
+      "name": "Build Zone",
+      "channels": [
+        { "name": "team-formation", "type": "text", "topic": "Find teammates and project partners." },
+        { "name": "help-desk", "type": "text", "topic": "Ask mentors and organizers for support." },
+        { "name": "project-showcase", "type": "text", "topic": "Share demos and progress updates." },
+        { "name": "mentor-room", "type": "voice" },
+        { "name": "team-room-1", "type": "voice" },
+        { "name": "team-room-2", "type": "voice" }
+      ]
+    }
+  ]
+}

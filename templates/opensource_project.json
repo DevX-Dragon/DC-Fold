@@ -1,0 +1,34 @@
+{
+  "roles": [
+    { "name": "Maintainer", "color": "#C0392B", "hoist": true },
+    { "name": "Core Contributor", "color": "#8E44AD", "hoist": true },
+    { "name": "Contributor", "color": "#27AE60", "hoist": false },
+    { "name": "Community", "color": "#7F8C8D", "hoist": false }
+  ],
+  "categories": [
+    {
+      "name": "Project Desk",
+      "channels": [
+        { "name": "announcements", "type": "text", "topic": "Release notes and project updates." },
+        { "name": "roadmap", "type": "text", "topic": "Priorities, milestones, and planning." },
+        { "name": "getting-started", "type": "text", "topic": "How new contributors can jump in." }
+      ]
+    },
+    {
+      "name": "Build Area",
+      "channels": [
+        { "name": "general-dev", "type": "text", "topic": "Architecture and implementation discussion." },
+        { "name": "issues-and-bugs", "type": "text", "topic": "Triage bugs and discuss fixes." },
+        { "name": "pull-request-review", "type": "text", "topic": "Coordinate reviews and follow-ups." },
+        { "name": "dev-sync", "type": "voice" }
+      ]
+    },
+    {
+      "name": "Community Space",
+      "channels": [
+        { "name": "show-and-tell", "type": "text", "topic": "Share integrations, experiments, and wins." },
+        { "name": "community-chat", "type": "text", "topic": "Casual conversation with contributors." }
+      ]
+    }
+  ]
+}
