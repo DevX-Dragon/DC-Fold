@@ -1,28 +1,113 @@
 {
+  "variables": {
+    "community_name": "Victory Grid",
+    "main_theme_color": "#F39C12"
+  },
   "roles": [
-    { "name": "Manager", "color": "#C0392B", "hoist": true },
-    { "name": "Coach", "color": "#F39C12", "hoist": true },
-    { "name": "Starter", "color": "#2980B9", "hoist": true },
-    { "name": "Substitute", "color": "#27AE60", "hoist": false },
-    { "name": "Analyst", "color": "#8E44AD", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Team Office",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Team updates and important notices." },
-        { "name": "schedule", "type": "text", "topic": "Scrims, matches, and practice times." },
-        { "name": "opponent-notes", "type": "text", "topic": "Scouting reports and research." }
+      "name": "Team Manager",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Practice Floor",
+      "name": "Coach",
+      "color": "#8E44AD",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "move_members",
+        "mute_members",
+        "deafen_members"
+      ]
+    },
+    {
+      "name": "Player",
+      "color": "#F39C12",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "COACH BOX",
       "channels": [
-        { "name": "strategy", "type": "text", "topic": "Discuss tactics, comps, and game plans." },
-        { "name": "vod-review", "type": "text", "topic": "Analyze footage and improve decision-making." },
-        { "name": "team-chat", "type": "text", "topic": "Quick communication for day-to-day activity." },
-        { "name": "scrim-room", "type": "voice" },
-        { "name": "review-room", "type": "voice" }
+        {
+          "name": "strategy-board",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private tactical planning for {{community_name}} leadership.",
+          "messages": [
+            {
+              "title": "Team Staff Only",
+              "description": "Review match plans, roster decisions, and scrim notes in this room.",
+              "color": "#C0392B"
+            }
+          ]
+        },
+        {
+          "name": "coach-comms",
+          "type": "voice",
+          "requires_staff": true
+        }
+      ]
+    },
+    {
+      "name": "TEAM HQ",
+      "channels": [
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Match notices, roster updates, and official team announcements.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Check the schedule, stay ready for scrims, and support the roster.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "team-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Daily team coordination and general esports chatter."
+        }
+      ]
+    },
+    {
+      "name": "COMPETITION ZONE",
+      "channels": [
+        {
+          "name": "scrim-room",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Practice planning, VOD notes, and post-match takeaways."
+        },
+        {
+          "name": "match-day",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

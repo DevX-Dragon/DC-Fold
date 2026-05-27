@@ -1,26 +1,113 @@
 {
+  "variables": {
+    "community_name": "Turning Pages Club",
+    "main_theme_color": "#8E6E53"
+  },
   "roles": [
-    { "name": "Host", "color": "#8E44AD", "hoist": true },
-    { "name": "Moderator", "color": "#2980B9", "hoist": true },
-    { "name": "Reader", "color": "#27AE60", "hoist": false },
-    { "name": "Guest", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Club Desk",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Current reads, voting, and meeting notices." },
-        { "name": "reading-list", "type": "text", "topic": "Upcoming books and recommendations." },
-        { "name": "schedule", "type": "text", "topic": "Meeting dates and chapter deadlines." }
+      "name": "Head Librarian",
+      "color": "#6C3483",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Discussion Rooms",
+      "name": "Discussion Host",
+      "color": "#8E6E53",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Reader",
+      "color": "#95A5A6",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "STAFF SHELF",
       "channels": [
-        { "name": "current-book", "type": "text", "topic": "Discuss the active book selection." },
-        { "name": "spoiler-room", "type": "text", "topic": "Full spoilers and deeper analysis." },
-        { "name": "book-recommendations", "type": "text", "topic": "Share favorites and find your next read." },
-        { "name": "book-talk", "type": "voice" }
+        {
+          "name": "reading-schedule",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Moderator planning space for {{community_name}} read cycles.",
+          "messages": [
+            {
+              "title": "Private Staff Shelf",
+              "description": "Coordinate monthly picks, host rotation, and member moderation here.",
+              "color": "#6C3483"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WELCOME DESK",
+      "channels": [
+        {
+          "name": "foyer",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Meet fellow readers and discover what {{community_name}} is reading next."
+        },
+        {
+          "name": "club-notices",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Official reading lists, event reminders, and updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Settle in, pick up the current read, and join the next chapter discussion.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "READING ROOMS",
+      "channels": [
+        {
+          "name": "current-book",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Live discussion space for the active community read."
+        },
+        {
+          "name": "recommendations",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Trade recommendations, hidden gems, and genre favorites."
+        },
+        {
+          "name": "reading-lounge",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

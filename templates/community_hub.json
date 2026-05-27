@@ -1,33 +1,116 @@
 {
+  "variables": {
+    "community_name": "Community Hub",
+    "main_theme_color": "#2ECC71"
+  },
   "roles": [
-    { "name": "Owner", "color": "#E74C3C", "hoist": true },
-    { "name": "Moderator", "color": "#3498DB", "hoist": true },
-    { "name": "Member", "color": "#2ECC71", "hoist": false },
-    { "name": "Newcomer", "color": "#95A5A6", "hoist": false }
+    {
+      "name": "Owner",
+      "color": "#E74C3C",
+      "hoist": true,
+      "permissions": [
+        "administrator"
+      ]
+    },
+    {
+      "name": "Moderator",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "view_audit_log",
+        "kick_members",
+        "ban_members",
+        "manage_messages"
+      ]
+    },
+    {
+      "name": "Member",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "mention_everyone",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
   ],
   "categories": [
     {
-      "name": "Start Here",
+      "name": "STAFF CORNER",
       "channels": [
-        { "name": "welcome", "type": "text", "topic": "Introduce yourself and get settled in." },
-        { "name": "rules-and-info", "type": "text", "topic": "Community guidelines and important information." },
-        { "name": "announcements", "type": "text", "topic": "Official news and updates." }
+        {
+          "name": "mod-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Internal moderation coordination for {{community_name}}.",
+          "messages": [
+            {
+              "title": "Private Moderator Channel",
+              "description": "Handle reports, coordinate responses, and review server operations here.",
+              "color": "#E74C3C"
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "Community",
+      "name": "START HERE",
       "channels": [
-        { "name": "general", "type": "text", "topic": "Main server conversation." },
-        { "name": "introductions", "type": "text", "topic": "Say hello and tell us about yourself." },
-        { "name": "media-share", "type": "text", "topic": "Share screenshots, clips, and photos." },
-        { "name": "lounge", "type": "voice" }
+        {
+          "name": "welcome",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Settle in and meet the people of {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Official updates and community-wide notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Read the updates, say hello, and jump into the main conversation spaces.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "Support Team",
+      "name": "COMMUNITY FLOOR",
       "channels": [
-        { "name": "mod-chat", "type": "text", "topic": "Private moderator coordination." },
-        { "name": "mod-voice", "type": "voice" }
+        {
+          "name": "general",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Main conversation channel for all members."
+        },
+        {
+          "name": "introductions",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Introduce yourself, your interests, and what brought you here."
+        },
+        {
+          "name": "lounge",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

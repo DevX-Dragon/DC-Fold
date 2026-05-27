@@ -1,26 +1,113 @@
 {
+  "variables": {
+    "community_name": "Neighborhood Connect",
+    "main_theme_color": "#27AE60"
+  },
   "roles": [
-    { "name": "Organizer", "color": "#C0392B", "hoist": true },
-    { "name": "Volunteer", "color": "#27AE60", "hoist": true },
-    { "name": "Resident", "color": "#2980B9", "hoist": false },
-    { "name": "Visitor", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Town Hall",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Neighborhood updates and civic notices." },
-        { "name": "events", "type": "text", "topic": "Local meetups, festivals, and activities." },
-        { "name": "resources", "type": "text", "topic": "Helpful local contacts and services." }
+      "name": "Community Admin",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Community Chat",
+      "name": "Volunteer Mod",
+      "color": "#2980B9",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Resident",
+      "color": "#27AE60",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "ADMIN TABLE",
       "channels": [
-        { "name": "general", "type": "text", "topic": "Discuss local news and everyday community life." },
-        { "name": "buy-sell-trade", "type": "text", "topic": "Community listings and exchanges." },
-        { "name": "recommendations", "type": "text", "topic": "Ask for trusted local suggestions." },
-        { "name": "community-meetup", "type": "voice" }
+        {
+          "name": "coordination-desk",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private coordination room for {{community_name}} volunteers.",
+          "messages": [
+            {
+              "title": "Volunteer Access Only",
+              "description": "Plan local announcements, moderation, and community support from here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TOWN SQUARE",
+      "channels": [
+        {
+          "name": "welcome-neighbors",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Introduce yourself and your area to the {{community_name}} server."
+        },
+        {
+          "name": "community-notices",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Important updates, upcoming meetups, and public notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Use this space to connect with neighbors, share local updates, and help each other out.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LOCAL LIFE",
+      "channels": [
+        {
+          "name": "general-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Everyday conversation around local happenings and life nearby."
+        },
+        {
+          "name": "events-and-recommendations",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Share local events, services, and favorite places."
+        },
+        {
+          "name": "meetup-lounge",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

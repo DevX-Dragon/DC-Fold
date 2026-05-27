@@ -1,22 +1,105 @@
 {
+  "variables": {
+    "community_name": "DevX Network",
+    "main_theme_color": "#7289DA"
+  },
   "roles": [
-    { "name": "Admin", "color": "#FF0000", "hoist": true },
-    { "name": "Moderator", "color": "#00FF00", "hoist": true },
-    { "name": "Member", "color": "#0000FF", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Information Hub",
-      "channels": [
-        { "name": "welcome", "type": "text", "topic": "Welcome to our community!" },
-        { "name": "announcements", "type": "text" }
+      "name": "Management",
+      "color": "#FF0000",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "General Lounges",
+      "name": "Staff Support",
+      "color": "#206694",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "view_audit_log",
+        "kick_members",
+        "ban_members",
+        "manage_messages",
+        "mute_members",
+        "deafen_members",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Community Member",
+      "color": "#99AAB5",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "mention_everyone",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "🔒 STAFF CORRIDOR",
       "channels": [
-        { "name": "general-chat", "type": "text", "topic": "Main discussion zone" },
-        { "name": "Voice Chat 1", "type": "voice" }
+        {
+          "name": "ops-logistics",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Operational center for the {{community_name}} leadership team.",
+          "messages": [
+            {
+              "title": "System Alert Directive",
+              "description": "Initialization complete. This channel is restricted to staff profiles.",
+              "color": "#FF0000"
+            }
+          ]
+        },
+        {
+          "name": "Staff Briefing",
+          "type": "voice",
+          "requires_staff": true
+        }
+      ]
+    },
+    {
+      "name": "💬 GENERAL SQUARE",
+      "channels": [
+        {
+          "name": "welcome-hub",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Welcome to the entry gateway of {{community_name}}!"
+        },
+        {
+          "name": "global-chatter",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "The main conversation hub for all members.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}!",
+              "description": "Please read our guidelines and check out our announcement systems.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "Open Lounge Voice",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

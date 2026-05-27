@@ -1,27 +1,113 @@
 {
+  "variables": {
+    "community_name": "Signal Sound Collective",
+    "main_theme_color": "#9B59B6"
+  },
   "roles": [
-    { "name": "Producer", "color": "#8E44AD", "hoist": true },
-    { "name": "Artist", "color": "#E67E22", "hoist": true },
-    { "name": "Collaborator", "color": "#3498DB", "hoist": false },
-    { "name": "Listener", "color": "#7F8C8D", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Studio Board",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Releases, deadlines, and community updates." },
-        { "name": "release-calendar", "type": "text", "topic": "Track launch dates and planned drops." },
-        { "name": "resources", "type": "text", "topic": "Plugins, samples, and reference material." }
+      "name": "Creative Director",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Creation Space",
+      "name": "Session Lead",
+      "color": "#9B59B6",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Performer",
+      "color": "#1ABC9C",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "CONTROL ROOM",
       "channels": [
-        { "name": "work-in-progress", "type": "text", "topic": "Share unfinished tracks and get feedback." },
-        { "name": "feedback", "type": "text", "topic": "Constructive critique and mix notes." },
-        { "name": "collab-board", "type": "text", "topic": "Find vocalists, producers, and features." },
-        { "name": "studio-a", "type": "voice" },
-        { "name": "listening-room", "type": "voice" }
+        {
+          "name": "set-planning",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private planning space for {{community_name}} sessions and releases.",
+          "messages": [
+            {
+              "title": "Staff Session Room",
+              "description": "Coordinate lineups, rehearsal plans, and release schedules here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GREEN ROOM",
+      "channels": [
+        {
+          "name": "welcome-stage",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Meet fellow musicians and introduce your sound in {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Session dates, release drops, and collective updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Share tracks, collaborate openly, and build something memorable together.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JAM SPACE",
+      "channels": [
+        {
+          "name": "track-share",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Post demos, finished songs, and works in progress."
+        },
+        {
+          "name": "production-talk",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Discuss gear, DAWs, songwriting, and arrangement ideas."
+        },
+        {
+          "name": "jam-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

@@ -1,26 +1,121 @@
 {
+  "variables": {
+    "community_name": "CareDesk Support",
+    "main_theme_color": "#2980B9"
+  },
   "roles": [
-    { "name": "Admin", "color": "#C0392B", "hoist": true },
-    { "name": "Support Lead", "color": "#2980B9", "hoist": true },
-    { "name": "Support Agent", "color": "#16A085", "hoist": true },
-    { "name": "Customer", "color": "#7F8C8D", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Help Desk",
-      "channels": [
-        { "name": "service-status", "type": "text", "topic": "Outages, maintenance, and incident updates." },
-        { "name": "how-to-get-help", "type": "text", "topic": "Instructions for filing effective support requests." },
-        { "name": "faq", "type": "text", "topic": "Answers to common questions." }
+      "name": "Admin",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Customer Support",
+      "name": "Support Lead",
+      "color": "#2980B9",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "view_audit_log",
+        "kick_members",
+        "ban_members",
+        "manage_messages",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Customer",
+      "color": "#7F8C8D",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "SUPPORT OPS",
       "channels": [
-        { "name": "general-support", "type": "text", "topic": "General help and troubleshooting." },
-        { "name": "bug-reports", "type": "text", "topic": "Report issues with steps and context." },
-        { "name": "feature-requests", "type": "text", "topic": "Suggest improvements and new ideas." },
-        { "name": "support-escalation", "type": "voice" }
+        {
+          "name": "case-triage",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private escalation and queue management for {{community_name}} staff.",
+          "messages": [
+            {
+              "title": "Staff Escalation Area",
+              "description": "Use this space for urgent incidents, complex cases, and handoffs.",
+              "color": "#C0392B"
+            }
+          ]
+        },
+        {
+          "name": "support-briefing",
+          "type": "voice",
+          "requires_staff": true
+        }
+      ]
+    },
+    {
+      "name": "HELP DESK",
+      "channels": [
+        {
+          "name": "service-status",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Outages, maintenance windows, and incident updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Check service health, search common answers, and open your next support thread here.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "how-to-get-help",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Instructions for creating clear, fast-to-resolve support requests."
+        }
+      ]
+    },
+    {
+      "name": "CUSTOMER SUPPORT",
+      "channels": [
+        {
+          "name": "general-support",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "General troubleshooting and support questions."
+        },
+        {
+          "name": "bug-reports",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Share reproducible issues, logs, and clear problem details."
+        },
+        {
+          "name": "support-escalation",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

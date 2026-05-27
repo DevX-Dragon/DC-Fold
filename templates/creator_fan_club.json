@@ -1,26 +1,113 @@
 {
+  "variables": {
+    "community_name": "Creator Circle",
+    "main_theme_color": "#E91E63"
+  },
   "roles": [
-    { "name": "Creator", "color": "#E84393", "hoist": true },
-    { "name": "Moderator", "color": "#0984E3", "hoist": true },
-    { "name": "VIP", "color": "#FDCB6E", "hoist": true },
-    { "name": "Fan", "color": "#00B894", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Spotlight",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "New content drops and official updates." },
-        { "name": "schedule", "type": "text", "topic": "Streams, uploads, and events." },
-        { "name": "faq", "type": "text", "topic": "Frequently asked questions for fans." }
+      "name": "Creator",
+      "color": "#E91E63",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Fan Space",
+      "name": "Community Team",
+      "color": "#9B59B6",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Fan",
+      "color": "#F1C40F",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "BACKSTAGE",
       "channels": [
-        { "name": "general-chat", "type": "text", "topic": "Hang out with the community." },
-        { "name": "fan-art", "type": "text", "topic": "Share art, edits, and creative tributes." },
-        { "name": "clips-and-reactions", "type": "text", "topic": "Post memorable moments and reactions." },
-        { "name": "community-stage", "type": "voice" }
+        {
+          "name": "team-sync",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private operations room for the {{community_name}} crew.",
+          "messages": [
+            {
+              "title": "Backstage Access",
+              "description": "Coordinate drops, livestreams, and fan engagement plans here.",
+              "color": "#9B59B6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MAIN STAGE",
+      "channels": [
+        {
+          "name": "welcome-fans",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Welcome station for everyone joining {{community_name}}."
+        },
+        {
+          "name": "creator-updates",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Announcements, release drops, and official posts.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Stay close to the latest content, events, and community moments.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FAN SPACE",
+      "channels": [
+        {
+          "name": "general-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Talk with other fans and share the hype."
+        },
+        {
+          "name": "fan-creations",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Share edits, fan art, clips, and appreciation posts."
+        },
+        {
+          "name": "watch-party",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

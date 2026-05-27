@@ -1,26 +1,114 @@
 {
+  "variables": {
+    "community_name": "Helping Hands Network",
+    "main_theme_color": "#16A085"
+  },
   "roles": [
-    { "name": "Director", "color": "#C0392B", "hoist": true },
-    { "name": "Coordinator", "color": "#2980B9", "hoist": true },
-    { "name": "Volunteer", "color": "#27AE60", "hoist": false },
-    { "name": "Supporter", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Mission Control",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Program updates and key notices." },
-        { "name": "mission-and-values", "type": "text", "topic": "What the organization stands for." },
-        { "name": "events-calendar", "type": "text", "topic": "Upcoming volunteer activities and deadlines." }
+      "name": "Director",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Volunteer Work",
+      "name": "Coordinator",
+      "color": "#16A085",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Volunteer",
+      "color": "#27AE60",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "COORDINATION DESK",
       "channels": [
-        { "name": "general-coordination", "type": "text", "topic": "Coordinate tasks and volunteer shifts." },
-        { "name": "field-updates", "type": "text", "topic": "Share progress from active programs." },
-        { "name": "resource-requests", "type": "text", "topic": "Ask for supplies, help, or support." },
-        { "name": "briefing-room", "type": "voice" }
+        {
+          "name": "staff-planning",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private volunteer coordination room for {{community_name}} leads.",
+          "messages": [
+            {
+              "title": "Coordinator Access",
+              "description": "Use this room for scheduling, assignments, and urgent support decisions.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WELCOME CENTER",
+      "channels": [
+        {
+          "name": "start-here",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Learn the mission and meet the people of {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Volunteer opportunities, campaign updates, and key notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Find your next way to help, connect with volunteers, and support the mission.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ACTION HUB",
+      "channels": [
+        {
+          "name": "volunteer-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Daily coordination, shared ideas, and community support."
+        },
+        {
+          "name": "events-and-outreach",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Discuss initiatives, events, and outreach opportunities."
+        },
+        {
+          "name": "meeting-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

@@ -1,26 +1,113 @@
 {
+  "variables": {
+    "community_name": "Mic Line Network",
+    "main_theme_color": "#E67E22"
+  },
   "roles": [
-    { "name": "Host", "color": "#D35400", "hoist": true },
-    { "name": "Producer", "color": "#2980B9", "hoist": true },
-    { "name": "Editor", "color": "#8E44AD", "hoist": true },
-    { "name": "Listener", "color": "#7F8C8D", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Show Notes",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Episode releases and network updates." },
-        { "name": "publishing-calendar", "type": "text", "topic": "Track episodes, guests, and deadlines." },
-        { "name": "pitch-ideas", "type": "text", "topic": "Episode themes and concept brainstorming." }
+      "name": "Executive Producer",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Production",
+      "name": "Show Producer",
+      "color": "#E67E22",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Listener",
+      "color": "#95A5A6",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "PRODUCTION ROOM",
       "channels": [
-        { "name": "recording-prep", "type": "text", "topic": "Run sheets, outlines, and talking points." },
-        { "name": "editing-feedback", "type": "text", "topic": "Review cuts, timing, and polish." },
-        { "name": "audience-discussion", "type": "text", "topic": "Listener questions and community feedback." },
-        { "name": "recording-room", "type": "voice" }
+        {
+          "name": "episode-planning",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private production planning room for {{community_name}} staff.",
+          "messages": [
+            {
+              "title": "Production Access",
+              "description": "Coordinate episodes, guests, publishing schedules, and edits here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NETWORK LOBBY",
+      "channels": [
+        {
+          "name": "welcome-desk",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Landing place for listeners joining {{community_name}}."
+        },
+        {
+          "name": "show-updates",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Episode launches, guest news, and official network updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Catch the newest episodes, talk about your favorites, and join live discussions.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LISTENER LOUNGE",
+      "channels": [
+        {
+          "name": "episode-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Discuss current episodes, favorite moments, and standout insights."
+        },
+        {
+          "name": "guest-suggestions",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Suggest future guests, topics, and series ideas."
+        },
+        {
+          "name": "recording-lounge",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

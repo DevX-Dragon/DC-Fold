@@ -1,26 +1,115 @@
 {
+  "variables": {
+    "community_name": "Market Lane",
+    "main_theme_color": "#F39C12"
+  },
   "roles": [
-    { "name": "Owner", "color": "#C0392B", "hoist": true },
-    { "name": "Staff", "color": "#2980B9", "hoist": true },
-    { "name": "Verified Seller", "color": "#27AE60", "hoist": true },
-    { "name": "Buyer", "color": "#7F8C8D", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Marketplace Info",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Store updates and important notices." },
-        { "name": "rules-and-safety", "type": "text", "topic": "Trading rules and anti-scam guidance." },
-        { "name": "verification", "type": "text", "topic": "How to become a verified seller." }
+      "name": "Marketplace Owner",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Trading Floor",
+      "name": "Sales Moderator",
+      "color": "#F39C12",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members",
+        "ban_members"
+      ]
+    },
+    {
+      "name": "Trader",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "MARKET OPS",
       "channels": [
-        { "name": "listings", "type": "text", "topic": "Post items, services, or offers." },
-        { "name": "requests", "type": "text", "topic": "Ask for specific items or commissions." },
-        { "name": "reviews", "type": "text", "topic": "Share transaction feedback and trust signals." },
-        { "name": "seller-lounge", "type": "voice" }
+        {
+          "name": "mod-queue",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Moderation and trust-and-safety coordination for {{community_name}}.",
+          "messages": [
+            {
+              "title": "Restricted Staff Area",
+              "description": "Handle seller issues, reports, and market policy decisions here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MARKET GATE",
+      "channels": [
+        {
+          "name": "welcome-desk",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Guidance for buyers and sellers joining {{community_name}}."
+        },
+        {
+          "name": "market-rules",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Marketplace rules, safety tips, and posting expectations.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Trade carefully, follow the listing rules, and keep deals transparent.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TRADING FLOOR",
+      "channels": [
+        {
+          "name": "listings",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 15,
+          "topic": "Post items, offers, or service listings with clear details."
+        },
+        {
+          "name": "buyer-questions",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Ask questions about listings, shipping, and availability."
+        },
+        {
+          "name": "vendor-lounge",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

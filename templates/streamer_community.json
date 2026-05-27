@@ -1,26 +1,115 @@
 {
+  "variables": {
+    "community_name": "Livewire Lounge",
+    "main_theme_color": "#9146FF"
+  },
   "roles": [
-    { "name": "Streamer", "color": "#6C5CE7", "hoist": true },
-    { "name": "Mod Squad", "color": "#00CEC9", "hoist": true },
-    { "name": "Subscriber", "color": "#FDCB6E", "hoist": true },
-    { "name": "Viewer", "color": "#636E72", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Live Updates",
-      "channels": [
-        { "name": "go-live-alerts", "type": "text", "topic": "Live notifications and stream changes." },
-        { "name": "stream-schedule", "type": "text", "topic": "Planned streams and special events." },
-        { "name": "stream-rules", "type": "text", "topic": "Community expectations during streams." }
+      "name": "Streamer",
+      "color": "#9146FF",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Chat Arena",
+      "name": "Mod Team",
+      "color": "#2ECC71",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members",
+        "ban_members",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Viewer",
+      "color": "#95A5A6",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "MOD HQ",
       "channels": [
-        { "name": "stream-chat", "type": "text", "topic": "Continue the stream conversation here." },
-        { "name": "games-and-recs", "type": "text", "topic": "Suggest games and discuss content ideas." },
-        { "name": "memes", "type": "text", "topic": "Community humor and inside jokes." },
-        { "name": "hangout", "type": "voice" }
+        {
+          "name": "mod-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private moderation and stream planning room for {{community_name}}.",
+          "messages": [
+            {
+              "title": "Moderator Access",
+              "description": "Coordinate events, moderation, and community management in this channel.",
+              "color": "#2ECC71"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHANNEL FEED",
+      "channels": [
+        {
+          "name": "stream-updates",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Go-live alerts, schedule updates, and big community moments.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Catch the next stream, hang with the chat, and stay in the loop.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "welcome-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "General welcome channel for new viewers and regulars."
+        }
+      ]
+    },
+    {
+      "name": "VIEWER LOUNGE",
+      "channels": [
+        {
+          "name": "general-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Talk about the stream, games, and community moments."
+        },
+        {
+          "name": "clips-and-fanart",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Share highlights, memes, fan art, and favorite moments."
+        },
+        {
+          "name": "viewer-vc",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

@@ -1,27 +1,114 @@
 {
+  "variables": {
+    "community_name": "LaunchCode Bootcamp",
+    "main_theme_color": "#3498DB"
+  },
   "roles": [
-    { "name": "Instructor", "color": "#E67E22", "hoist": true },
-    { "name": "Mentor", "color": "#3498DB", "hoist": true },
-    { "name": "Student", "color": "#2ECC71", "hoist": false },
-    { "name": "Alumni", "color": "#9B59B6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Bootcamp Info",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Official bootcamp updates and milestones." },
-        { "name": "curriculum", "type": "text", "topic": "Modules, learning path, and reading order." },
-        { "name": "assignments", "type": "text", "topic": "Projects, deadlines, and submission notes." }
+      "name": "Program Lead",
+      "color": "#E74C3C",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Learning",
+      "name": "Mentor",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Student",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "INSTRUCTOR ROOM",
       "channels": [
-        { "name": "general-help", "type": "text", "topic": "Ask coding questions and unblock fast." },
-        { "name": "project-showcase", "type": "text", "topic": "Share demos and progress screenshots." },
-        { "name": "code-review", "type": "text", "topic": "Feedback on solutions and structure." },
-        { "name": "mentor-office-hours", "type": "voice" },
-        { "name": "pair-programming", "type": "voice" }
+        {
+          "name": "cohort-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Mentor-only operations room for {{community_name}}.",
+          "messages": [
+            {
+              "title": "Instructor Access",
+              "description": "Use this space for curriculum planning, moderation, and session logistics.",
+              "color": "#E74C3C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ONBOARDING",
+      "channels": [
+        {
+          "name": "start-here",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Orientation hub for new students joining {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Schedule updates, milestone reminders, and cohort notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Track your lessons, ask questions early, and keep shipping progress.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BUILD LAB",
+      "channels": [
+        {
+          "name": "general-dev",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Daily coding discussion, blockers, and debugging help."
+        },
+        {
+          "name": "project-help",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Get feedback on assignments, capstones, and project structure."
+        },
+        {
+          "name": "pair-programming",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

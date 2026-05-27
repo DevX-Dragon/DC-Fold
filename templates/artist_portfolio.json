@@ -1,26 +1,119 @@
 {
+  "variables": {
+    "community_name": "Canvas Collective",
+    "main_theme_color": "#D35400"
+  },
   "roles": [
-    { "name": "Curator", "color": "#D35400", "hoist": true },
-    { "name": "Featured Artist", "color": "#8E44AD", "hoist": true },
-    { "name": "Artist", "color": "#16A085", "hoist": false },
-    { "name": "Visitor", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Gallery Entrance",
-      "channels": [
-        { "name": "welcome", "type": "text", "topic": "Introduce yourself and your art style." },
-        { "name": "announcements", "type": "text", "topic": "Exhibits, events, and important updates." },
-        { "name": "submission-guidelines", "type": "text", "topic": "How to share work and participate." }
+      "name": "Gallery Director",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Studios",
+      "name": "Curator Staff",
+      "color": "#8E44AD",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "view_audit_log",
+        "manage_messages",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Artist",
+      "color": "#16A085",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "STAFF ATELIER",
       "channels": [
-        { "name": "showcase", "type": "text", "topic": "Post finished work and portfolio pieces." },
-        { "name": "workshop", "type": "text", "topic": "Discuss techniques, tools, and process." },
-        { "name": "critique-corner", "type": "text", "topic": "Request and give respectful feedback." },
-        { "name": "open-studio", "type": "voice" }
+        {
+          "name": "exhibit-planning",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private exhibition planning for {{community_name}}.",
+          "messages": [
+            {
+              "title": "Curator Access Only",
+              "description": "Use this room to coordinate featured showcases, reviews, and events.",
+              "color": "#C0392B"
+            }
+          ]
+        },
+        {
+          "name": "staff-critique",
+          "type": "voice",
+          "requires_staff": true
+        }
+      ]
+    },
+    {
+      "name": "GALLERY ENTRANCE",
+      "channels": [
+        {
+          "name": "welcome-canvas",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Introduce yourself and your art style in {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Featured exhibits, calls for submissions, and community updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Share your work, encourage fellow artists, and explore the latest exhibits.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OPEN STUDIOS",
+      "channels": [
+        {
+          "name": "showcase-wall",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Post finished pieces, portfolio highlights, and signature work."
+        },
+        {
+          "name": "workshop-floor",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Discuss tools, materials, process breakdowns, and technique."
+        },
+        {
+          "name": "open-studio",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

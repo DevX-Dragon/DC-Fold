@@ -1,27 +1,113 @@
 {
+  "variables": {
+    "community_name": "Focus Study Group",
+    "main_theme_color": "#5DADE2"
+  },
   "roles": [
-    { "name": "Organizer", "color": "#D35400", "hoist": true },
-    { "name": "Tutor", "color": "#2980B9", "hoist": true },
-    { "name": "Student", "color": "#16A085", "hoist": false },
-    { "name": "Guest", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Orientation",
-      "channels": [
-        { "name": "welcome", "type": "text", "topic": "Start here and learn how the study group works." },
-        { "name": "schedule", "type": "text", "topic": "Timetables, deadlines, and study session plans." },
-        { "name": "resources", "type": "text", "topic": "Useful notes, links, and recommended material." }
+      "name": "Study Lead",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Study Rooms",
+      "name": "Tutor",
+      "color": "#5DADE2",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Learner",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "TUTOR DESK",
       "channels": [
-        { "name": "general-study", "type": "text", "topic": "Questions, accountability, and discussion." },
-        { "name": "homework-help", "type": "text", "topic": "Ask for help with assignments and exercises." },
-        { "name": "exam-prep", "type": "text", "topic": "Prep strategies and revision sessions." },
-        { "name": "quiet-room", "type": "voice" },
-        { "name": "group-study", "type": "voice" }
+        {
+          "name": "session-planning",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private planning room for {{community_name}} leads and tutors.",
+          "messages": [
+            {
+              "title": "Tutor Access",
+              "description": "Coordinate study sessions, support plans, and moderation here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CHECK-IN",
+      "channels": [
+        {
+          "name": "welcome",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Join {{community_name}} and share what you are studying."
+        },
+        {
+          "name": "study-updates",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Schedules, goals, and important group announcements.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Set your goals, stay consistent, and lean on the group when you need support.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FOCUS SPACE",
+      "channels": [
+        {
+          "name": "study-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Share progress, ask questions, and keep each other accountable."
+        },
+        {
+          "name": "resource-share",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Post notes, tools, and useful learning resources."
+        },
+        {
+          "name": "focus-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

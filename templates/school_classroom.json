@@ -1,27 +1,114 @@
 {
+  "variables": {
+    "community_name": "Northview Classroom",
+    "main_theme_color": "#3498DB"
+  },
   "roles": [
-    { "name": "Teacher", "color": "#D35400", "hoist": true },
-    { "name": "Assistant", "color": "#2980B9", "hoist": true },
-    { "name": "Student", "color": "#27AE60", "hoist": false },
-    { "name": "Parent", "color": "#8E44AD", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Class Info",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Class updates, reminders, and notices." },
-        { "name": "syllabus", "type": "text", "topic": "Course outline and expectations." },
-        { "name": "assignments", "type": "text", "topic": "Homework, deadlines, and project notes." }
+      "name": "Teacher",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Classroom",
+      "name": "Teaching Assistant",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members",
+        "mute_members"
+      ]
+    },
+    {
+      "name": "Student",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "FACULTY ROOM",
       "channels": [
-        { "name": "class-discussion", "type": "text", "topic": "Ask questions and discuss lessons." },
-        { "name": "group-projects", "type": "text", "topic": "Coordinate team assignments." },
-        { "name": "study-help", "type": "text", "topic": "Support each other with coursework." },
-        { "name": "lecture-room", "type": "voice" },
-        { "name": "project-room", "type": "voice" }
+        {
+          "name": "staff-notes",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private coordination room for {{community_name}} instructional staff.",
+          "messages": [
+            {
+              "title": "Faculty Access",
+              "description": "Use this room for lesson planning, moderation, and student support coordination.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CLASSROOM ENTRY",
+      "channels": [
+        {
+          "name": "welcome",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Orientation space for students joining {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Assignments, schedule changes, and class notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Check your class updates, stay organized, and ask for help when you need it.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "STUDY HALL",
+      "channels": [
+        {
+          "name": "class-discussion",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Discuss coursework, concepts, and lesson follow-ups."
+        },
+        {
+          "name": "homework-help",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Ask questions and support each other with assignments."
+        },
+        {
+          "name": "study-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

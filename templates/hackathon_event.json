@@ -1,28 +1,114 @@
 {
+  "variables": {
+    "community_name": "BuildSprint Hackathon",
+    "main_theme_color": "#1ABC9C"
+  },
   "roles": [
-    { "name": "Organizer", "color": "#E74C3C", "hoist": true },
-    { "name": "Mentor", "color": "#3498DB", "hoist": true },
-    { "name": "Judge", "color": "#9B59B6", "hoist": true },
-    { "name": "Hacker", "color": "#2ECC71", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Event Desk",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Official hackathon updates and deadlines." },
-        { "name": "rules-and-faq", "type": "text", "topic": "Submission rules, judging, and FAQs." },
-        { "name": "resources", "type": "text", "topic": "APIs, starter packs, and helpful links." }
+      "name": "Event Director",
+      "color": "#E74C3C",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Build Zone",
+      "name": "Organizer",
+      "color": "#1ABC9C",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Hacker",
+      "color": "#F1C40F",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "ORGANIZER DESK",
       "channels": [
-        { "name": "team-formation", "type": "text", "topic": "Find teammates and project partners." },
-        { "name": "help-desk", "type": "text", "topic": "Ask mentors and organizers for support." },
-        { "name": "project-showcase", "type": "text", "topic": "Share demos and progress updates." },
-        { "name": "mentor-room", "type": "voice" },
-        { "name": "team-room-1", "type": "voice" },
-        { "name": "team-room-2", "type": "voice" }
+        {
+          "name": "event-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Internal operations space for {{community_name}} staff.",
+          "messages": [
+            {
+              "title": "Organizer Channel",
+              "description": "Track logistics, team support, judging flow, and escalation decisions here.",
+              "color": "#E74C3C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EVENT LOBBY",
+      "channels": [
+        {
+          "name": "welcome",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Starting point for participants joining {{community_name}}."
+        },
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Official announcements, timelines, and challenge updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Form your team, explore the prompts, and keep an eye on the event clock.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "BUILD FLOOR",
+      "channels": [
+        {
+          "name": "team-finder",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Meet collaborators and build your hackathon team."
+        },
+        {
+          "name": "project-help",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Ask technical questions, share blockers, and get support."
+        },
+        {
+          "name": "demo-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

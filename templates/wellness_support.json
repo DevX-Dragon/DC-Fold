@@ -1,26 +1,113 @@
 {
+  "variables": {
+    "community_name": "Wellness Harbor",
+    "main_theme_color": "#48C9B0"
+  },
   "roles": [
-    { "name": "Facilitator", "color": "#16A085", "hoist": true },
-    { "name": "Moderator", "color": "#2980B9", "hoist": true },
-    { "name": "Member", "color": "#27AE60", "hoist": false },
-    { "name": "Guest", "color": "#95A5A6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Grounding Space",
-      "channels": [
-        { "name": "welcome", "type": "text", "topic": "Gentle introductions and community guidance." },
-        { "name": "guidelines", "type": "text", "topic": "Boundaries, care expectations, and resources." },
-        { "name": "announcements", "type": "text", "topic": "Group updates and scheduled sessions." }
+      "name": "Community Lead",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Community Care",
+      "name": "Support Guide",
+      "color": "#48C9B0",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Member",
+      "color": "#95A5A6",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "GUIDE ROOM",
       "channels": [
-        { "name": "daily-check-in", "type": "text", "topic": "Share how you are doing today." },
-        { "name": "coping-tools", "type": "text", "topic": "Helpful techniques and supportive resources." },
-        { "name": "peer-support", "type": "text", "topic": "Encouragement and respectful conversation." },
-        { "name": "support-circle", "type": "voice" }
+        {
+          "name": "moderation-care",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private support coordination and moderation room for {{community_name}} guides.",
+          "messages": [
+            {
+              "title": "Guide Access Only",
+              "description": "Handle sensitive situations, community care plans, and moderation decisions here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CALM WELCOME",
+      "channels": [
+        {
+          "name": "welcome-space",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "A gentle landing place for everyone joining {{community_name}}."
+        },
+        {
+          "name": "community-updates",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Wellness check-ins, group updates, and supportive notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Take your time, connect kindly, and use the space in ways that feel supportive.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SUPPORT LOUNGE",
+      "channels": [
+        {
+          "name": "daily-check-in",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 15,
+          "topic": "Share how your day is going and support others with care."
+        },
+        {
+          "name": "self-care-resources",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 10,
+          "topic": "Collect calming resources, routines, and gentle encouragement."
+        },
+        {
+          "name": "quiet-room",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

@@ -1,33 +1,114 @@
 {
+  "variables": {
+    "community_name": "Open Source Forge",
+    "main_theme_color": "#27AE60"
+  },
   "roles": [
-    { "name": "Maintainer", "color": "#C0392B", "hoist": true },
-    { "name": "Core Contributor", "color": "#8E44AD", "hoist": true },
-    { "name": "Contributor", "color": "#27AE60", "hoist": false },
-    { "name": "Community", "color": "#7F8C8D", "hoist": false }
+    {
+      "name": "Maintainer",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
+      ]
+    },
+    {
+      "name": "Core Contributor",
+      "color": "#8E44AD",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Contributor",
+      "color": "#27AE60",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
   ],
   "categories": [
     {
-      "name": "Project Desk",
+      "name": "MAINTAINER DECK",
       "channels": [
-        { "name": "announcements", "type": "text", "topic": "Release notes and project updates." },
-        { "name": "roadmap", "type": "text", "topic": "Priorities, milestones, and planning." },
-        { "name": "getting-started", "type": "text", "topic": "How new contributors can jump in." }
+        {
+          "name": "release-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private release planning and moderation space for {{community_name}} maintainers.",
+          "messages": [
+            {
+              "title": "Maintainer Access",
+              "description": "Coordinate releases, moderation, and contributor escalations here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
       ]
     },
     {
-      "name": "Build Area",
+      "name": "PROJECT DESK",
       "channels": [
-        { "name": "general-dev", "type": "text", "topic": "Architecture and implementation discussion." },
-        { "name": "issues-and-bugs", "type": "text", "topic": "Triage bugs and discuss fixes." },
-        { "name": "pull-request-review", "type": "text", "topic": "Coordinate reviews and follow-ups." },
-        { "name": "dev-sync", "type": "voice" }
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Release notes, roadmap changes, and official project updates.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Explore the roadmap, ask smart questions, and start contributing.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "getting-started",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Starter guidance for new contributors and first issues."
+        }
       ]
     },
     {
-      "name": "Community Space",
+      "name": "BUILD AREA",
       "channels": [
-        { "name": "show-and-tell", "type": "text", "topic": "Share integrations, experiments, and wins." },
-        { "name": "community-chat", "type": "text", "topic": "Casual conversation with contributors." }
+        {
+          "name": "general-dev",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Architecture, implementation details, and collaboration discussion."
+        },
+        {
+          "name": "issues-and-bugs",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Bug triage, reproduction notes, and fix tracking."
+        },
+        {
+          "name": "dev-sync",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

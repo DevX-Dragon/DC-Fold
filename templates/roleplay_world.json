@@ -1,27 +1,113 @@
 {
+  "variables": {
+    "community_name": "Mythvale Realm",
+    "main_theme_color": "#6C5CE7"
+  },
   "roles": [
-    { "name": "Game Master", "color": "#8E44AD", "hoist": true },
-    { "name": "Moderator", "color": "#2980B9", "hoist": true },
-    { "name": "Player", "color": "#27AE60", "hoist": false },
-    { "name": "Spectator", "color": "#7F8C8D", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "World Guide",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Campaign news and event notices." },
-        { "name": "lore", "type": "text", "topic": "Worldbuilding details, history, and factions." },
-        { "name": "character-creation", "type": "text", "topic": "Build and refine player characters." }
+      "name": "Realm Master",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Roleplay",
+      "name": "Lore Keeper",
+      "color": "#6C5CE7",
+      "hoist": true,
+      "permissions": [
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "kick_members"
+      ]
+    },
+    {
+      "name": "Adventurer",
+      "color": "#1ABC9C",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "GM CHAMBER",
       "channels": [
-        { "name": "in-character", "type": "text", "topic": "Main story and in-character scenes." },
-        { "name": "out-of-character", "type": "text", "topic": "Planning, clarifications, and casual chat." },
-        { "name": "quest-board", "type": "text", "topic": "Hooks, missions, and event prompts." },
-        { "name": "table-1", "type": "voice" },
-        { "name": "table-2", "type": "voice" }
+        {
+          "name": "story-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private worldbuilding and moderation room for {{community_name}} staff.",
+          "messages": [
+            {
+              "title": "Lore Staff Access",
+              "description": "Plan arcs, review disputes, and manage the world state from here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "REALM GATE",
+      "channels": [
+        {
+          "name": "arrivals",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 0,
+          "topic": "Introduce your character and step into {{community_name}}."
+        },
+        {
+          "name": "realm-notices",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Lore updates, event hooks, and official world announcements.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Read the lore, build your character, and join the unfolding story.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ADVENTURE ZONE",
+      "channels": [
+        {
+          "name": "in-character",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Main in-world roleplay channel for scenes and interactions."
+        },
+        {
+          "name": "out-of-character",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Planning, clarifications, and casual talk outside the story."
+        },
+        {
+          "name": "campfire",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]

@@ -1,28 +1,114 @@
 {
+  "variables": {
+    "community_name": "Launchpad Labs",
+    "main_theme_color": "#34495E"
+  },
   "roles": [
-    { "name": "Founder", "color": "#E74C3C", "hoist": true },
-    { "name": "Lead", "color": "#F39C12", "hoist": true },
-    { "name": "Team", "color": "#3498DB", "hoist": false },
-    { "name": "Advisor", "color": "#9B59B6", "hoist": false }
-  ],
-  "categories": [
     {
-      "name": "Company Pulse",
-      "channels": [
-        { "name": "announcements", "type": "text", "topic": "Company-wide updates and key decisions." },
-        { "name": "goals-and-metrics", "type": "text", "topic": "KPIs, milestones, and weekly targets." },
-        { "name": "team-calendar", "type": "text", "topic": "Launches, demos, and meeting reminders." }
+      "name": "Founder",
+      "color": "#C0392B",
+      "hoist": true,
+      "permissions": [
+        "administrator"
       ]
     },
     {
-      "name": "Execution",
+      "name": "Operations Lead",
+      "color": "#34495E",
+      "hoist": true,
+      "permissions": [
+        "manage_roles",
+        "manage_channels",
+        "manage_messages",
+        "view_audit_log",
+        "move_members"
+      ]
+    },
+    {
+      "name": "Team Member",
+      "color": "#27AE60",
+      "hoist": false,
+      "permissions": [
+        "change_nickname",
+        "send_messages",
+        "embed_links",
+        "attach_files",
+        "read_message_history",
+        "add_reactions",
+        "connect",
+        "speak",
+        "use_voice_activation"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "LEADERSHIP ROOM",
       "channels": [
-        { "name": "general-ops", "type": "text", "topic": "Daily coordination across the team." },
-        { "name": "product", "type": "text", "topic": "Feature planning and product feedback." },
-        { "name": "engineering", "type": "text", "topic": "Build, bugs, and implementation details." },
-        { "name": "marketing", "type": "text", "topic": "Growth, campaigns, and positioning." },
-        { "name": "daily-standup", "type": "voice" },
-        { "name": "strategy-room", "type": "voice" }
+        {
+          "name": "exec-ops",
+          "type": "text",
+          "requires_staff": true,
+          "slowmode": 0,
+          "topic": "Private decision-making and coordination space for {{community_name}} leadership.",
+          "messages": [
+            {
+              "title": "Leadership Access",
+              "description": "Handle roadmap priorities, staffing, and internal decisions from here.",
+              "color": "#C0392B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "COMPANY BRIEF",
+      "channels": [
+        {
+          "name": "announcements",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Product milestones, company updates, and official notices.",
+          "messages": [
+            {
+              "title": "Welcome to {{community_name}}",
+              "description": "Stay aligned on goals, unblock each other quickly, and keep momentum high.",
+              "color": "{{main_theme_color}}"
+            }
+          ]
+        },
+        {
+          "name": "team-chat",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Daily async communication for the whole team."
+        }
+      ]
+    },
+    {
+      "name": "WORKSTREAMS",
+      "channels": [
+        {
+          "name": "product-build",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 3,
+          "topic": "Product development, roadmap discussion, and implementation updates."
+        },
+        {
+          "name": "growth-and-sales",
+          "type": "text",
+          "requires_staff": false,
+          "slowmode": 5,
+          "topic": "Marketing, user growth, partnerships, and sales planning."
+        },
+        {
+          "name": "daily-standup",
+          "type": "voice",
+          "requires_staff": false
+        }
       ]
     }
   ]
