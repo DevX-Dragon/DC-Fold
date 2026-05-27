@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DC-Fold is a Discord server blueprint bot with reusable templates, custom JSON deployments, previews, backups, and a built-in web blueprint studio.">
+    <title>DC-Fold | Discord Server Blueprint Bot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="top-nav">
+            <a class="brand" href="#top">
+                <span class="brand-mark">DF</span>
+                <span class="brand-copy">
+                    <strong>DC-Fold</strong>
+                    <small>Discord blueprint deployments</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-menu">
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="site-menu" id="site-menu">
+                <a href="#features">Features</a>
+                <a href="#commands">Commands</a>
+                <a href="#templates">Templates</a>
+                <a href="#builder">Blueprint Studio</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">Ship Discord servers like infrastructure</p>
+                    <h1>Deploy polished community layouts from templates or custom JSON.</h1>
+                    <p class="hero-text">
+                        DC-Fold turns Discord server structure into reusable blueprints. Deploy from GitHub-hosted templates, uploaded JSON files, or pasted payloads, then preview, back up, and iterate fast.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#builder">Open Blueprint Studio</a>
+                        <a class="btn btn-secondary" href="#commands">See Bot Commands</a>
+                    </div>
+                    <div class="hero-microstats">
+                        <div>
+                            <strong>22</strong>
+                            <span>ready-made templates</span>
+                        </div>
+                        <div>
+                            <strong>3</strong>
+                            <span>deploy inputs: GitHub, upload, paste</span>
+                        </div>
+                        <div>
+                            <strong>4</strong>
+                            <span>core commands: deploy, setup, preview, backup</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="hero-card hero-card-primary">
+                        <div class="card-kicker">Deploy modes</div>
+                        <ul class="card-list">
+                            <li><code>/deploy template_id:standard_hub</code></li>
+                            <li><code>/deploy template_file:custom.json</code></li>
+                            <li><code>/deploy json_payload:{...}</code></li>
+                        </ul>
+                    </div>
+                    <div class="hero-card">
+                        <div class="card-kicker">Template schema</div>
+                        <pre class="mini-code">{
+  "variables": { ... },
+  "roles": [ ... ],
+  "categories": [ ... ]
+}</pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="value-strip" id="features">
+                <article class="value-card">
+                    <h2>Server setup without drag-and-drop fatigue</h2>
+                    <p>Templates define roles, permissions, categories, channel topics, slowmode, staff visibility, and seeded embeds in one JSON file.</p>
+                </article>
+                <article class="value-card">
+                    <h2>Deploy safely</h2>
+                    <p>The bot validates template structure before deployment and supports wipe-or-keep confirmation paths with progress tracking.</p>
+                </article>
+                <article class="value-card">
+                    <h2>Build custom blueprints in the browser</h2>
+                    <p>The web app includes a lightweight studio for drafting JSON blueprints and exporting them directly for DC-Fold deployments.</p>
+                </article>
+            </section>
+
+            <section class="section-block" id="commands">
+                <div class="section-heading">
+                    <p class="eyebrow">Command Surface</p>
+                    <h2>Built around the current bot workflow</h2>
+                </div>
+                <div class="command-grid">
+                    <article class="command-card">
+                        <span class="command-name">/deploy</span>
+                        <p>Deploy from a GitHub template, uploaded JSON file, or pasted JSON payload with validation before any layout changes begin.</p>
+                    </article>
+                    <article class="command-card">
+                        <span class="command-name">/setup</span>
+                        <p>Walk through available GitHub templates in a guided wizard and launch deployment from a friendlier selection flow.</p>
+                    </article>
+                    <article class="command-card">
+                        <span class="command-name">/preview</span>
+                        <p>Render a structure outline of roles, categories, and channels so you can inspect a blueprint before applying it.</p>
+                    </article>
+                    <article class="command-card">
+                        <span class="command-name">/backup</span>
+                        <p>Export the current server layout into JSON so you can restore, version, or evolve it later.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section-block" id="templates">
+                <div class="section-heading">
+                    <p class="eyebrow">Template Library</p>
+                    <h2>Comes with 22 template blueprints out of the box</h2>
+                    <p>Real template profiles already in the repository, covering community hubs, classrooms, support servers, creator spaces, esports teams, hackathons, and more.</p>
+                </div>
+                <div class="template-spotlight" id="template-spotlight"></div>
+                <div class="template-tags" id="template-tags"></div>
+            </section>
+
+            <section class="section-block studio-section" id="builder">
+                <div class="section-heading">
+                    <p class="eyebrow">Side Feature</p>
+                    <h2>Blueprint Studio</h2>
+                    <p>Use the browser builder to draft a custom JSON blueprint, then export it for the bot's custom deploy flow.</p>
+                </div>
+
+                <div class="builder-shell">
+                    <div class="nav-panel">
+                        <div class="nav-logo">DF</div>
+                        <div class="nav-divider"></div>
+                        <div class="nav-icon active">TL</div>
+                        <div class="nav-icon">JS</div>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Layout Architect</h3>
+                            <span class="status-badge">v2.1</span>
+                        </div>
+
+                        <div class="tree-container">
+                            <div class="tree-section-header">Global Infrastructure</div>
+                            <button class="tree-item active" id="roles-menu-item" type="button">
+                                <span class="icon">RL</span> Server Roles Matrix
+                            </button>
+
+                            <div class="tree-section-header">Categories and Channels</div>
+
+                            <div id="inline-category-creator" class="inline-creator-card hidden">
+                                <input type="text" id="new-cat-name" placeholder="Category Name...">
+                                <div class="creator-actions">
+                                    <button class="btn-action-confirm" id="confirm-category-btn" type="button">Add</button>
+                                    <button class="btn-action-cancel" id="cancel-category-btn" type="button">Cancel</button>
+                                </div>
+                            </div>
+
+                            <div id="inline-channel-creator" class="inline-creator-card hidden">
+                                <input type="text" id="new-chan-name" placeholder="channel-name...">
+                                <input type="hidden" id="new-chan-target-cat">
+                                <div class="creator-actions">
+                                    <button class="btn-action-confirm" id="confirm-channel-btn" type="button">Add</button>
+                                    <button class="btn-action-cancel" id="cancel-channel-btn" type="button">Cancel</button>
+                                </div>
+                            </div>
+
+                            <div id="sidebar-layout-tree"></div>
+                        </div>
+
+                        <div class="sidebar-footer">
+                            <button class="btn btn-secondary btn-full" id="add-category-btn" type="button">
+                                <span>+</span> Add New Category
+                            </button>
+                        </div>
+                    </aside>
+
+                    <div class="canvas">
+                        <div class="top-bar">
+                            <div class="view-indicator">
+                                <span id="view-icon">RL</span>
+                                <h3 id="view-title">Server Roles Matrix Configuration</h3>
+                            </div>
+                            <div class="top-bar-actions">
+                                <div class="studio-chip-row">
+                                    <span class="studio-chip">Schema-ready</span>
+                                    <span class="studio-chip">Custom deploy compatible</span>
+                                </div>
+                                <div class="builder-actions">
+                                    <button class="btn btn-secondary builder-btn" id="copy-json-btn" type="button">Copy JSON</button>
+                                    <button class="btn btn-primary builder-btn" id="download-json-btn" type="button">Download JSON</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-area">
+                            <div class="workspace-stack">
+                                <section id="view-roles" class="workspace-card">
+                                    <div class="card-header">
+                                        <h3>Configure Infrastructure Roles</h3>
+                                        <p>Separate role names with commas. DC-Fold-compatible starter fields are generated automatically.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="role-names">Role Hierarchy Registry</label>
+                                        <input type="text" id="role-names" value="Management, Staff Support, Community Member" placeholder="e.g. Admin, Staff, Member">
+                                    </div>
+                                    <div class="info-callout">
+                                        <span class="callout-icon">Hint</span>
+                                        <p>Use this studio to get the structure right fast, then refine colors, permissions, variables, or starter messages in the exported JSON if needed.</p>
+                                    </div>
+                                </section>
+
+                                <section id="view-channel" class="workspace-card hidden">
+                                    <div class="card-header">
+                                        <h3>Modify Track Attributes</h3>
+                                        <p>Adjust naming, type, slowmode, visibility, and topic metadata for the currently selected channel.</p>
+                                    </div>
+
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="chan-name">Asset Channel Name</label>
+                                            <input type="text" id="chan-name" placeholder="general-chat">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="chan-type">Operational Routing Type</label>
+                                            <select id="chan-type">
+                                                <option value="text">Text</option>
+                                                <option value="voice">Voice</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="chan-slowmode">Message Slowmode Cooldown (Seconds)</label>
+                                        <input type="number" id="chan-slowmode" value="0" min="0" max="21600">
+                                        <span class="field-hint">Use 0 to disable rate-limiting. Discord caps slowmode at 21,600 seconds.</span>
+                                    </div>
+
+                                    <div class="form-group toggle-group">
+                                        <div class="toggle-container">
+                                            <input type="checkbox" id="chan-staff">
+                                            <div class="toggle-slider"></div>
+                                        </div>
+                                        <div class="toggle-label">
+                                            <h4>Restrict to Staff Credentials</h4>
+                                            <p>Marks the channel as staff-only in the JSON blueprint so DC-Fold can create restricted access.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="chan-topic">Channel Description Metadata Block (Topic Header)</label>
+                                        <textarea id="chan-topic" rows="4" placeholder="Describe the purpose of this channel..."></textarea>
+                                    </div>
+                                </section>
+
+                                <section class="json-preview-panel">
+                                    <div class="json-preview-header">
+                                        <h3>Live JSON Preview</h3>
+                                        <span>What the bot will read</span>
+                                    </div>
+                                    <pre id="json-preview"></pre>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-block" id="faq">
+                <div class="section-heading">
+                    <p class="eyebrow">Workflow Notes</p>
+                    <h2>How the web app and bot fit together</h2>
+                </div>
+                <div class="faq-grid">
+                    <article>
+                        <h3>What does the site do?</h3>
+                        <p>It showcases DC-Fold as a deployable Discord infrastructure bot and includes the JSON blueprint builder as a secondary utility in the site menu.</p>
+                    </article>
+                    <article>
+                        <h3>What does the bot do?</h3>
+                        <p>It reads template JSON, creates roles and channels, applies staff visibility rules, sets slowmode, and seeds starter embeds in text channels.</p>
+                    </article>
+                    <article>
+                        <h3>Where does GitHub Pages deploy from?</h3>
+                        <p>The workflow publishes the static contents of <code>web-app</code>, so the site can live independently from the bot runtime.</p>
+                    </article>
+                    <article>
+                        <h3>Can I use the builder for custom deploys?</h3>
+                        <p>Yes. Export or copy the generated JSON, then use the bot's custom deploy path with an uploaded file or pasted payload.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
