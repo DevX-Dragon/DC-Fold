@@ -4,7 +4,7 @@ import json
 from typing import Any, List, Optional
 
 def parse_hex_color(hex_str: str) -> discord.Color:
-    """" " "  Safely converts a hex string into a discord.Color object.
+    """" Safely converts a hex string into a discord.Color object.
     Handles formats with or without the leading '#' symbol.
     """
     if not hex_str:
